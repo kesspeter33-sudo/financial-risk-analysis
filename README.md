@@ -4,7 +4,7 @@
 
 ## 📌 Project Overview
 
-The **Financial Performance Analysis Dashboard** is an interactive business intelligence project developed using Microsoft Power BI to analyze financial performance, profitability, operating income, profit growth, and loss-making companies.
+The **Financial Performance Analysis Dashboard** Analysis 181,442 rows, it an interactive business intelligence project developed using Microsoft Power BI to analyze financial performance, profitability, operating income, profit growth, and loss-making companies.
 
 The dashboard transforms financial data into meaningful visual insights, allowing users to monitor key performance indicators (KPIs), explore financial trends over time, compare monthly operating income, and investigate transaction-level performance.
 
@@ -244,27 +244,136 @@ Through this project, I demonstrated practical skills in:
 
 ---
 
-## 📁 Repository Structure
+## 📁  Structure formulars
+.1 Total Profit
 
-```text
-Financial-Performance-Analysis/
-│
-├── README.md
-│
-├── Dashboard/
-│   └── Financial_Performance_Dashboard.pbix
-│
-├── Screenshots/
-│   └── financial_dashboard.png
-│
-├── Data/
-│   └── README.md
-│
-└── Documentation/
-    └── Project_Overview.md
-```
+Total Profit =
+SUM(FinancialData[Profit])
 
-*Update the repository structure to match the actual files you upload.*
+Purpose: Calculates the total profit across all records in the current filter context.
+
+2.2 Total Net Profit
+
+Total Net Profit =
+SUM(FinancialData[Net Profit])
+
+Purpose: Calculates the total net profit.
+
+2.3 Average Net Profit
+
+Average Net Profit =
+AVERAGE(FinancialData[Net Profit])
+
+Purpose: Calculates the average net profit per row.
+
+2.4 Average Operating Income
+
+Average Operating Income =
+AVERAGE(FinancialData[Operating Income])
+
+Purpose: Calculates the average operating income.
+
+2.5 Total Operating Income
+
+Total Operating Income =
+SUM(FinancialData[Operating Income])
+
+Purpose: Calculates total operating income.
+
+2.6 Total Sales
+
+Total Sales =
+SUM(FinancialData[Sales])
+
+Purpose: Calculates total sales.
+
+2.7 Total Sales Expenses
+
+Total Sales Expenses =
+SUM(FinancialData[Sales Expenses])
+
+Purpose: Calculates total sales expenses.
+
+3. Profitability Analysis
+
+3.1 Net Profit Margin
+
+Net Profit Margin % =
+DIVIDE(
+    [Total Net Profit],
+    [Total Sales],
+    0
+)
+
+Purpose: Measures net profit as a percentage of sales.
+
+Format: Percentage.
+
+3.2 Profit Margin
+
+Profit Margin % =
+DIVIDE(
+    [Total Profit],
+    [Total Sales],
+    0
+)
+
+Purpose: Measures total profit relative to sales.
+
+Format: Percentage.
+
+3.3 Sales Expense Ratio
+
+Sales Expense Ratio % =
+DIVIDE(
+    [Total Sales Expenses],
+    [Total Sales],
+    0
+)
+
+Purpose: Measures sales expenses relative to total sales.
+
+Format: Percentage.
+
+3.4 Profitable Companies
+
+Profitable Companies =
+CALCULATE(
+    DISTINCTCOUNT(FinancialData[Ticker]),
+    FinancialData[Net Profit] > 0
+)
+
+Purpose: Counts distinct companies with positive net profit in the current filter context.
+
+3.5 Loss-Making Companies
+
+Loss-Making Companies =
+CALCULATE(
+    DISTINCTCOUNT(FinancialData[Ticker]),
+    FinancialData[Net Profit] < 0
+)
+
+Purpose: Counts distinct companies with negative net profit in the current filter context.
+
+3.6 Total Companies
+
+Total Companies =
+DISTINCTCOUNT(FinancialData[Ticker])
+
+Purpose: Counts distinct company identifiers.
+
+3.7 Loss-Making Companies Percentage
+
+Loss-Making Companies % =
+DIVIDE(
+    [Loss-Making Companies],
+    [Total Companies],
+    0
+
+
+
+<img width="1243" height="581" alt="Screenshot 2026-11-02 095848" src="https://github.com/user-attachments/assets/c7584837-849f-42ab-bb70-36438e4a19eb" />
+
 
 ---
 
@@ -279,21 +388,6 @@ Financial-Performance-Analysis/
 
 ---
 
-## 🖼️ Dashboard Preview
-
-![Financial Performance Analysis Dashboard](Screenshots/financial_dashboard.png)
-
-*Replace the image path with the actual screenshot filename in your repository.*
-
----
-
-## ⚠️ Data Disclaimer
-
-The displayed KPI values and observations are based on the dashboard screenshot.
-
-Financial metric definitions, units, and underlying calculations should be verified against the original dataset and Power BI measures before being used for financial decisions.
-
-This project is intended for analytical and portfolio demonstration purposes.
 
 ---
 
