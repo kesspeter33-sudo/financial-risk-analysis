@@ -397,7 +397,7 @@ DIVIDE(
 Data Analyst | Business Intelligence | Power BI | Excel
 
 - **LinkedIn:** [Connect with me](https://www.linkedin.com/in/kess-peter-bb851)
-- **Portfolio:** [View my portfolio](https://canva.link/a3iaibbhnnz0b75)
+- **Portfolio:**[ [View my portfolio](https://canva.link/a3iaibbhnnz0b75)](https://canva.link/qfihujl1kpln8tw)
 
 ---
 
